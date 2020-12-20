@@ -3,9 +3,12 @@
 </main>
 
 <style>
+    main {
+        flex: 1;
+    }
+
     input {
         min-width: 100vh;
-        flex:1;
         border-radius: var(--largest);
         background-color: var(--grey);
         padding: 1rem;
