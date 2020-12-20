@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Search } from './components'
+	import { Search, Footer } from './components'
 	import { githubLogo } from './assetPaths'
 	import { links } from './configs';
 
@@ -16,6 +16,7 @@
 			View Source
 		</button>
 	</div>
+	<Footer/>
 </main>
 
 <style>
@@ -29,6 +30,7 @@
 		justify-content: center;
 		color: var(--smokey-white);
 		font-size: var(--larger);
+		font-weight: var(--bold);
 	}
 	
 	#title {
@@ -45,6 +47,7 @@
 	#source-button {
 		display: inline-block;
 		font-size: var(--medium);
+		font-weight: var(--semi-bold);
 		border-radius: calc(var(--medium) - var(--small));
 		cursor: pointer;
 	}
@@ -52,6 +55,6 @@
 	#logo {
 		float:left;
 		margin-right: 0.5rem;
-		width: var(--medium);
+		width: var(--almost-big);
 	}
 </style>

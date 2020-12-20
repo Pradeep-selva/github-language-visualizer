@@ -1,6 +1,7 @@
 :root {
-  --small: 0.5rem;
+  --small: 1rem;
   --medium: 2rem;
+  --almost-big: 2.5rem;
   --big: 3rem;
   --bigger: 3.5rem;
   --large: 4rem;

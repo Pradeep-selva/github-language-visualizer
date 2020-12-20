@@ -1,5 +1,15 @@
+<script lang="ts">
+    import { getUserRepos } from "../configs";
+
+    let user: string = ""
+
+    const handleSubmit = (event) => {
+        event.key === "Enter" && getUserRepos(user).then(console.log)
+    }
+</script>
+
 <main>
-    <input type="text" placeholder="Search for a github user"/>
+    <input type="text" placeholder="Search for a github user" on:keypress={handleSubmit} bind:value={user}/>
 </main>
 
 <style>
