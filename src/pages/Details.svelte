@@ -1,11 +1,11 @@
 <script lang="ts">
     import {onMount} from 'svelte'
-    import { UserCard } from '../components';
-import BarChart from '../components/BarChart.svelte';
-import PieChart from '../components/PieChart.svelte';
-import TopLanguageCard from '../components/TopLanguageCard.svelte';
+    import { Loading, UserCard } from '../components';
+    import BarChart from '../components/BarChart.svelte';
+    import PieChart from '../components/PieChart.svelte';
+    import TopLanguageCard from '../components/TopLanguageCard.svelte';
     import { getUserData, getUserRepoLanguages, getUserRepos } from '../configs';
-import { formatChartData, getTopLanguages } from '../services';
+    import { formatChartData, getTopLanguages } from '../services';
 
     type Response = {
         [x:string]: string|number|null
@@ -55,6 +55,7 @@ import { formatChartData, getTopLanguages } from '../services';
     <h1>{loading?"We are fetching your data":`Result for ${params?.userName}`}</h1>
     {#if loading}
         <h4>This may take some time. Please be patient...</h4>
+        <Loading/>
     {:else}
         {#if Object.keys(userData).length > 0}
             <UserCard userData={userData}/>
