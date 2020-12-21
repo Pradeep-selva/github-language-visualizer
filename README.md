@@ -20,11 +20,11 @@
 
 ## Screenshots
 
-![home](./public/ss1.png)
+![home](./public/assets/ss1.png)
 
 ---
 
-![home](./public/ss2.png)
+![details](./public/assets/ss2.png)
 
 ## License
 
