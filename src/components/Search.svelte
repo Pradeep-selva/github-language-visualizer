@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { getUserRepoLanguages, getUserRepos } from "../configs";
+    import {fade} from 'svelte/transition';
     import {push} from 'svelte-spa-router'
 
     let user: string = ""
@@ -11,7 +11,13 @@
 </script>
 
 <main>
-    <input type="text" placeholder="Search for a github user" on:keypress={handleSubmit} bind:value={user}/>
+    <input 
+    type="text" 
+    placeholder="Search for a github user" 
+    on:keypress={handleSubmit} 
+    bind:value={user}
+    transition:fade={{duration:500}}
+    />
 </main>
 
 <style>

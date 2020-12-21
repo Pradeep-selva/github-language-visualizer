@@ -1,6 +1,6 @@
 <script>
 import { pop } from "svelte-spa-router";
-import { emptyIcon } from "../assetPaths";
+import { backIcon, emptyIcon } from "../assetPaths";
 </script>
 
 <main>
@@ -9,7 +9,7 @@ import { emptyIcon } from "../assetPaths";
 
     <button class="back" style="cursor:pointer" on:click={() => pop()}>
         <img 
-            src="https://image.flaticon.com/icons/png/512/59/59098.png" 
+            src={backIcon}
             alt="back icon"
             style="width:20px; margin-right:10px;"
         />

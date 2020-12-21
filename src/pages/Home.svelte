@@ -1,9 +1,13 @@
 <script lang="ts">
-	import { Search, SourceCodeButton } from '../components'
+	import { Search, SourceCodeButton } from '../components';
+	import {fade} from 'svelte/transition';
+
 </script>
 
 <main>
-	<h1 id="title">Github Language Visualizer</h1>
+	<h1 id="title" transition:fade={{duration:300}}>
+		Github Language Visualizer
+	</h1>
 	<Search/>
     <SourceCodeButton/>
 </main>

@@ -1,12 +1,13 @@
 <script lang="ts">
     import { formatNumberNotation } from "../services";
+	import {fade} from 'svelte/transition'
 
     export let userName:string = "";
     export let languages: {[x:string]:string}|{} = {};
 </script>
 
 <main>
-    <div class="user-card">
+    <div class="user-card" transition:fade={{duration:500}}>
         <p>{userName}'s top 3 languages</p>
         <p class="data" style="font-size:1rem">(includes all repos)</p>
         {#each Object.keys(languages) as language,index (index)}

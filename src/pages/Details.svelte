@@ -7,7 +7,8 @@
     import { getUserData, getUserRepoLanguages, getUserRepos } from '../configs';
     import { formatChartData, getTopLanguages } from '../services';
     import {pop} from 'svelte-spa-router'
-    import { emptyIcon } from '../assetPaths';
+    import { backIcon, emptyIcon } from '../assetPaths';
+	import {fade} from 'svelte/transition'
 
     type Response = {
         [x:string]: string|number|null
@@ -60,10 +61,12 @@
 
 <main lang="ts">
     {#if loading || Object.keys(userData).length > 0}
-        <h1>{loading?"We are fetching your data":`Result for ${params?.userName}`}</h1>
+        <h1 transition:fade={{duration:700}}>
+            {loading?"We are fetching your data":`Result for ${params?.userName}`}
+        </h1>
     {/if}
 
-    {#if Object.keys(userData).length === 0 && !loading}
+    {#if error}
         <img src={emptyIcon} alt="empty"/>
         <h1>User Not Found!</h1>
     {/if}
@@ -97,7 +100,7 @@
 
         <button class="back" style="cursor:pointer" on:click={() => pop()}>
             <img 
-                src="https://image.flaticon.com/icons/png/512/59/59098.png" 
+                src={backIcon}
                 alt="back icon"
                 style="width:20px; margin-right:10px;"
             />

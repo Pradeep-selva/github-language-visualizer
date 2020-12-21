@@ -4,6 +4,7 @@
     import FusionTheme from 'fusioncharts/themes/fusioncharts.theme.fusion';
     import SvelteFC, { fcRoot } from 'svelte-fusioncharts';
     import { getStackedChartData } from '../services';
+	import {fade} from 'svelte/transition'
 
     export let ownData = {}
     export let forkedData = {}
@@ -47,8 +48,8 @@
   };
 </script>
 
-<main>
-    <SvelteFC {...chartConfigs} />
+<main transition:fade={{duration:500}}>
+    <SvelteFC {...chartConfigs}/>
 </main>
 
 <style>

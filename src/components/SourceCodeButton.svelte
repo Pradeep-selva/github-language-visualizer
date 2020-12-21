@@ -1,12 +1,16 @@
 <script>
     import { githubLogo } from '../assetPaths'
 	import { links } from '../configs';
+	import { fade } from 'svelte/transition'
 
 	const handleClick = () => window.open(links.githubSourceCode, "_blank")
 </script>
 
 <main>
-    <div id="source-code">
+	<div 
+		id="source-code" 
+		transition:fade={{duration:500}}
+	>
 		<button id="source-button" on:click={handleClick}>
 			<img id="logo" src={githubLogo} alt="github logo"/>
 			View Source

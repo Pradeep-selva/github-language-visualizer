@@ -3,6 +3,7 @@
     import Charts from 'fusioncharts/fusioncharts.charts';
     import FusionTheme from 'fusioncharts/themes/fusioncharts.theme.fusion';
     import SvelteFC, { fcRoot } from 'svelte-fusioncharts';
+	import {fade} from 'svelte/transition'
 
     export let data = []
     export let userName = ""
@@ -27,7 +28,7 @@
     }
 </script>
 
-<main>
+<main transition:fade={{duration:500}}>
     <SvelteFC {...chartConfigs} />
 </main>
 

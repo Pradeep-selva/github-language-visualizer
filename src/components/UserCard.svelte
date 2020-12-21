@@ -1,11 +1,12 @@
 <script>
     import { repoLogo } from "../assetPaths";
+	import {fade} from 'svelte/transition'
 
     export let userData = {};
 </script>
 
 <main>
-    <div class="user-card">
+    <div class="user-card" transition:fade={{duration:500}}>
         <img src={userData.avatar_url+""} alt="avatar" class="avatar"/>
         <p>@{userData.login}{" "} 
             <span class="subtitle">{!!userData.name?`(${userData.name||""})`:""}</span>
