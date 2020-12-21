@@ -26,6 +26,9 @@
         padding: 1rem;
         text-align: center;
         font-size: var(--big);
+        box-shadow: 11px 13px 48px -16px rgba(0,0,0,0.75);
+        -webkit-box-shadow: 11px 13px 48px -16px rgba(0,0,0,0.75);
+        -moz-box-shadow: 11px 13px 48px -16px rgba(0,0,0,0.75);
     }
 
     input:focus {
