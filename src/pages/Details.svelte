@@ -75,15 +75,16 @@
                 data={formatChartData(languageStats)}
                 userName={params?.userName}
             />
-            <button class="back" style="cursor:pointer" on:click={() => pop()}>
-                <img 
-                    src="https://image.flaticon.com/icons/png/512/59/59098.png" 
-                    alt="back icon"
-                    style="width:20px; margin-right:10px;"
-                />
-                Go Back
-            </button>
         {/if}
+
+        <button class="back" style="cursor:pointer" on:click={() => pop()}>
+            <img 
+                src="https://image.flaticon.com/icons/png/512/59/59098.png" 
+                alt="back icon"
+                style="width:20px; margin-right:10px;"
+            />
+            Go Back
+        </button>
     {/if}
 </main>
 
