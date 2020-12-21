@@ -1,17 +1,12 @@
 <script lang="ts">
     import { getUserRepoLanguages, getUserRepos } from "../configs";
+    import {push} from 'svelte-spa-router'
 
     let user: string = ""
 
     const handleSubmit = (event) => {
-        event.key === "Enter" && getUserRepos(user).then(repos => {
-            console.log(repos)
-            repos.map(item => getUserRepoLanguages(user, item.name).then(languages => {
-                for(let k in languages as Object){
-                    console.log(k)
-                }
-            }))
-        })
+        event.key === "Enter" && 
+        push(`/details/${user}`)
     }
 </script>
 

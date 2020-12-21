@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Search, Footer, SourceCodeButton } from '../components'
+	import { Search, SourceCodeButton } from '../components'
 </script>
 
 <main>

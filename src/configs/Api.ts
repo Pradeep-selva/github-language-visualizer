@@ -1,5 +1,10 @@
 import Axios from "axios";
 
+export const getUserData = (userName: string) =>
+  Axios.get<Object>(`https://api.github.com/users/${userName}`)
+    .then((response) => response.data)
+    .catch((err) => err);
+
 export const getUserRepos = (userName: string) =>
   Axios.get<Object>(`https://api.github.com/users/${userName}/repos`)
     .then((response) => response.data)

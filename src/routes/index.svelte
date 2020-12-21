@@ -6,6 +6,6 @@
 <main>
 	<Router routes={{
 		'/': Home,
-		'/details': Details
+		'/details/:userName': Details
 	}}/>
 </main>
