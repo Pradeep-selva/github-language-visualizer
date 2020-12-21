@@ -3,8 +3,9 @@
     import { UserCard } from '../components';
 import BarChart from '../components/BarChart.svelte';
 import PieChart from '../components/PieChart.svelte';
+import TopLanguageCard from '../components/TopLanguageCard.svelte';
     import { getUserData, getUserRepoLanguages, getUserRepos } from '../configs';
-import { formatChartData } from '../services';
+import { formatChartData, getTopLanguages } from '../services';
 
     type Response = {
         [x:string]: string|number|null
@@ -60,6 +61,10 @@ import { formatChartData } from '../services';
         {/if}
 
         {#if Object.keys(languageStats).length > 0}
+            <TopLanguageCard 
+                languages={getTopLanguages(languageStats)} 
+                userName={params?.userName}
+            />
             <BarChart 
                 data={formatChartData(languageStats)} 
                 userName={params?.userName}

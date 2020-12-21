@@ -23,7 +23,7 @@
     const chartConfigs = {
         type: 'column2d',
         width: '60%',
-        height: "80%",
+        height: "50%",
         dataFormat: 'json',
         dataSource
     }

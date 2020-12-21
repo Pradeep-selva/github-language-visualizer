@@ -21,7 +21,7 @@
     const chartConfigs = {
         type: 'pie3d',
         width: '60%',
-        height:"60%",
+        height:"30%",
         dataFormat: 'json',
         dataSource
     }
