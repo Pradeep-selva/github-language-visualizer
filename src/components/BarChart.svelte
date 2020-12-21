@@ -24,7 +24,7 @@
         },
         categories: [
             {
-                category: getStackedChartData(ownData, forkedData).labels
+                category: labels
             }
         ],
         dataset: [

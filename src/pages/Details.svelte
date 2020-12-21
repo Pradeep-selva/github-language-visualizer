@@ -7,6 +7,7 @@
     import { getUserData, getUserRepoLanguages, getUserRepos } from '../configs';
     import { formatChartData, getTopLanguages } from '../services';
     import {pop} from 'svelte-spa-router'
+    import { emptyIcon } from '../assetPaths';
 
     type Response = {
         [x:string]: string|number|null
@@ -20,7 +21,7 @@
 
     let ownLanguageStats: Stats = {};
     let forkedLanguageStats: Stats = {};
-    let userData: Response = {};
+    let userData: Response|null = {};
     let error = false;
     let loading = false;
 
@@ -58,7 +59,15 @@
 </script>
 
 <main lang="ts">
-    <h1>{loading?"We are fetching your data":`Result for ${params?.userName}`}</h1>
+    {#if loading || Object.keys(userData).length > 0}
+        <h1>{loading?"We are fetching your data":`Result for ${params?.userName}`}</h1>
+    {/if}
+
+    {#if Object.keys(userData).length === 0 && !loading}
+        <img src={emptyIcon} alt="empty"/>
+        <h1>User Not Found!</h1>
+    {/if}
+
     {#if loading}
         <h4>This may take some time. Please be patient...</h4>
         <Loading/>
