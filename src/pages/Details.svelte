@@ -6,6 +6,7 @@
     import TopLanguageCard from '../components/TopLanguageCard.svelte';
     import { getUserData, getUserRepoLanguages, getUserRepos } from '../configs';
     import { formatChartData, getTopLanguages } from '../services';
+    import {pop} from 'svelte-spa-router'
 
     type Response = {
         [x:string]: string|number|null
@@ -74,6 +75,14 @@
                 data={formatChartData(languageStats)}
                 userName={params?.userName}
             />
+            <button class="back" style="cursor:pointer" on:click={() => pop()}>
+                <img 
+                    src="https://image.flaticon.com/icons/png/512/59/59098.png" 
+                    alt="back icon"
+                    style="width:20px; margin-right:10px;"
+                />
+                Go Back
+            </button>
         {/if}
     {/if}
 </main>
@@ -91,5 +100,12 @@
 
     h1 {
         font-size: var(--large);
+    }
+
+    .back {
+        margin: 2rem 0 5rem 0;
+        font-weight: var(--bold);
+        padding: 1rem;
+        border-radius: var(--small);
     }
 </style>
