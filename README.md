@@ -16,6 +16,7 @@
 
 - Clone the repo and install dependencies with `npm install` (or) `yarn`
 - Create a file named `secrets.ts` in src directory and export a constant named `GITHUB_TOKEN` containing your github authentication key.
+- Create a file named `firebaseConfig.js` in the public directory with your firebaseConfig object.
 - Run `npm run dev` and go to `localhost:5000`
 
 ## Screenshots
