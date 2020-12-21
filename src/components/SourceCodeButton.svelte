@@ -19,8 +19,8 @@
 		flex: 3;
 		align-items: center;
 		justify-content: center;
-		display: flex;
-        margin-bottom: 4rem;
+        display: flex;
+        margin-top: var(--larger);
 	}
 
 	#source-button {

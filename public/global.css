@@ -9,6 +9,8 @@ body {
     #258e75;
   mix-blend-mode: normal;
   box-sizing: border-box;
+  width: 100vw;
+  height: 100vh;
   font-family: "Raleway", sans-serif;
 }
 

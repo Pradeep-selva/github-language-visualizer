@@ -1,11 +1,16 @@
 <script lang="ts">
     import {onMount} from 'svelte'
+    import { UserCard } from '../components';
     import { getUserData, getUserRepoLanguages, getUserRepos } from '../configs';
+
+    type Response = {
+        [x:string]: string|number|null
+    }
 
     export let params: Record<'userName', string>|null = null
 
-    let languageStats = {};
-    let userData = {};
+    let languageStats: Response = {};
+    let userData: Response = {};
     let error = false;
     let loading = false;
 
@@ -38,12 +43,28 @@
     onMount(fetchAll);
 </script>
 
-<main>
-    <h1>Details</h1>
+<main lang="ts">
+    <h1>Result for {params?.userName}</h1>
     {#if loading}
         <h4>This may take some time. Please be patient...</h4>
     {:else}
-        <h4>{params?.userName}</h4>
-        <p>{JSON.stringify(languageStats)}</p>
+        {#if Object.keys(userData).length > 0}
+            <UserCard userData={userData}/>
+        {/if}
     {/if}
 </main>
+
+<style>
+    main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 0 10% 0 10%;
+        color: var(--smokey-white);
+    }
+
+    h1 {
+        font-size: var(--large);
+    }
+</style>

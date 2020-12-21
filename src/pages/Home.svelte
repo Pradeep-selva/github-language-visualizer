@@ -11,7 +11,6 @@
 <style>
 	main {
 		text-align: center;
-		height: 100vh;
 		margin: 0 10% 0 10%;
 		display: flex;
 		flex-direction: column;
