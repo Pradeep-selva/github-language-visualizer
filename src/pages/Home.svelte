@@ -1,7 +1,6 @@
 <script lang="ts">
 	import { Search, SourceCodeButton } from '../components';
 	import {fade} from 'svelte/transition';
-
 </script>
 
 <main>
