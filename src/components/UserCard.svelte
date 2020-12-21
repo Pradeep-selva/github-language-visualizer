@@ -6,25 +6,27 @@
 
 <main>
     <div class="user-card">
-                <img src={userData.avatar_url+""} alt="avatar" class="avatar"/>
-                <p>@{userData.login}{" "} 
-                    <span class="subtitle">{!!userData.name?`(${userData.name||""})`:""}</span>
-                </p>
-                {#if !!userData.bio}
-                    <p class="subtitle">"{userData.bio||""}"</p>
-                {/if}
-                <p class="sub-data">
-                    <span class="label">Followers: </span>
-                    <span class="data" style="margin-right:20px">{userData.followers}</span>
-                    <span class="label">Following: </span>
-                    <span class="data">{userData.following}</span>
-                </p>
-                <p class="sub-data">
-                    <span><img id="icon" src={repoLogo} alt="icon"/></span>
-                    <span class="label">Repositories: </span>
-                    <span class="data">{userData.public_repos}</span>
-                </p>
-            </div>
+        <img src={userData.avatar_url+""} alt="avatar" class="avatar"/>
+        <p>@{userData.login}{" "} 
+            <span class="subtitle">{!!userData.name?`(${userData.name||""})`:""}</span>
+        </p>
+        {#if !!userData.bio}
+            <p class="subtitle">"{userData.bio||""}"</p>
+        {/if}
+        <p class="sub-data">
+            <span class="label">Followers: </span>
+            <span class="data" style="margin-right:20px">
+                {userData.followers}
+            </span>
+            <span class="label">Following: </span>
+            <span class="data">{userData.following}</span>
+        </p>
+        <p class="sub-data">
+            <span><img id="icon" src={repoLogo} alt="icon"/></span>
+            <span class="label">Repositories: </span>
+            <span class="data">{userData.public_repos}</span>
+        </p>
+    </div>
 </main>
 
 <style>

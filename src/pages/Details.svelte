@@ -1,15 +1,22 @@
 <script lang="ts">
     import {onMount} from 'svelte'
     import { UserCard } from '../components';
+import BarChart from '../components/BarChart.svelte';
+import PieChart from '../components/PieChart.svelte';
     import { getUserData, getUserRepoLanguages, getUserRepos } from '../configs';
+import { formatChartData } from '../services';
 
     type Response = {
         [x:string]: string|number|null
     }
 
+    type Stats = {
+        [x:string]: number
+    }
+
     export let params: Record<'userName', string>|null = null
 
-    let languageStats: Response = {};
+    let languageStats: Stats = {};
     let userData: Response = {};
     let error = false;
     let loading = false;
@@ -50,6 +57,17 @@
     {:else}
         {#if Object.keys(userData).length > 0}
             <UserCard userData={userData}/>
+        {/if}
+
+        {#if Object.keys(languageStats).length > 0}
+            <BarChart 
+                data={formatChartData(languageStats)} 
+                userName={params?.userName}
+            />
+            <PieChart 
+                data={formatChartData(languageStats)}
+                userName={params?.userName}
+            />
         {/if}
     {/if}
 </main>
