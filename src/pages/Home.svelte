@@ -18,7 +18,8 @@
 		justify-content: center;
 		color: var(--smokey-white);
 		font-size: var(--larger);
-		font-weight: var(--bold);
+        font-weight: var(--bold);
+        padding-bottom: 20vh;
 	}
 	
 	#title {

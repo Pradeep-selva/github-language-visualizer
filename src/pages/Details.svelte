@@ -51,7 +51,7 @@ import { formatChartData } from '../services';
 </script>
 
 <main lang="ts">
-    <h1>Result for {params?.userName}</h1>
+    <h1>{loading?"We are fetching your data":`Result for ${params?.userName}`}</h1>
     {#if loading}
         <h4>This may take some time. Please be patient...</h4>
     {:else}
@@ -80,6 +80,7 @@ import { formatChartData } from '../services';
         justify-content: center;
         margin: 0 10% 0 10%;
         color: var(--smokey-white);
+        min-height: 100vh;
     }
 
     h1 {
