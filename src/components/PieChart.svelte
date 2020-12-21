@@ -11,7 +11,7 @@
 
     const dataSource = {
         chart: {
-            caption: `${userName}'s language usage`,
+            caption: `${userName}'s language usage (excludes forked repos)`,
             updateAnimduration: "0.6",
             theme: "fusion"
         },

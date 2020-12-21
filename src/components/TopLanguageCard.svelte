@@ -8,6 +8,7 @@
 <main>
     <div class="user-card">
         <p>{userName}'s top 3 languages</p>
+        <p class="data" style="font-size:1rem">(includes all repos)</p>
         {#each Object.keys(languages) as language,index (index)}
             <p class="sub-data">
                 <span class="label">{index+1}. {language}: </span>

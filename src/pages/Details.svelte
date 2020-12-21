@@ -18,7 +18,8 @@
 
     export let params: Record<'userName', string>|null = null
 
-    let languageStats: Stats = {};
+    let ownLanguageStats: Stats = {};
+    let forkedLanguageStats: Stats = {};
     let userData: Response = {};
     let error = false;
     let loading = false;
@@ -36,7 +37,11 @@
                 const languages = await getUserRepoLanguages(userName, repo.name);
                 
                 for(let language in languages){
-                    languageStats[language] = (languageStats[language]||0)+languages[language];
+                    if(repo.fork){
+                        forkedLanguageStats[language] = (forkedLanguageStats[language]||0)+languages[language]
+                    } else {
+                        ownLanguageStats[language] = (ownLanguageStats[language]||0)+languages[language];
+                    }
                 }
             })
             
@@ -62,17 +67,21 @@
             <UserCard userData={userData}/>
         {/if}
 
-        {#if Object.keys(languageStats).length > 0}
+        {#if Object.keys(ownLanguageStats).length > 0}
             <TopLanguageCard 
-                languages={getTopLanguages(languageStats)} 
+                languages={getTopLanguages({
+                    ...ownLanguageStats, 
+                    ...forkedLanguageStats
+                })} 
                 userName={params?.userName}
             />
             <BarChart 
-                data={formatChartData(languageStats)} 
+                ownData={ownLanguageStats}
+                forkedData={forkedLanguageStats} 
                 userName={params?.userName}
             />
             <PieChart 
-                data={formatChartData(languageStats)}
+                data={formatChartData(ownLanguageStats)}
                 userName={params?.userName}
             />
         {/if}

@@ -3,9 +3,13 @@
     import Charts from 'fusioncharts/fusioncharts.charts';
     import FusionTheme from 'fusioncharts/themes/fusioncharts.theme.fusion';
     import SvelteFC, { fcRoot } from 'svelte-fusioncharts';
+    import { getStackedChartData } from '../services';
 
-    export let data = []
+    export let ownData = {}
+    export let forkedData = {}
     export let userName = ""
+
+    let {labels, forkedValues, ownValues} = getStackedChartData(ownData, forkedData)
 
     fcRoot(FusionCharts, Charts, FusionTheme);
 
@@ -15,18 +19,32 @@
             xAxisName: "Languages",
             yAxisName: "Lines of code",
             updateAnimduration: "0.6",
+            plottooltext: "$seriesName - <b>$dataValue</b> lines",
             theme: "fusion"
         },
-        data
+        categories: [
+            {
+                category: getStackedChartData(ownData, forkedData).labels
+            }
+        ],
+        dataset: [
+            {
+                seriesname: "Owned repos",
+                data: ownValues
+            },
+            {
+                seriesname: "Forked repos",
+                data: forkedValues
+            }
+        ]
     }
-
-    const chartConfigs = {
-        type: 'column2d',
-        width: '60%',
-        height: "50%",
-        dataFormat: 'json',
-        dataSource
-    }
+  const chartConfigs = {
+    type: 'stackedcolumn3d',
+    width: "60%",
+    height: "50%",
+    dataFormat: 'json',
+    dataSource
+  };
 </script>
 
 <main>
