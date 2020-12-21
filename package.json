@@ -5,7 +5,8 @@
     "build": "rollup -c",
     "dev": "rollup -c -w",
     "start": "sirv public -s",
-    "validate": "svelte-check"
+    "validate": "svelte-check",
+    "deploy": "rollup -c && firebase deploy"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^16.0.0",

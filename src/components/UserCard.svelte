@@ -8,7 +8,8 @@
 <main>
     <div class="user-card" transition:fade={{duration:500}}>
         <img src={userData.avatar_url+""} alt="avatar" class="avatar"/>
-        <p>@{userData.login}{" "} 
+        <p class="name" on:click={() => window.open(userData?.html_url, "_blank")}>
+            @{userData.login}{" "} 
             <span class="subtitle">{!!userData.name?`(${userData.name||""})`:""}</span>
         </p>
         {#if !!userData.bio}
@@ -64,6 +65,7 @@
     .subtitle {
         font-size: var(--small);
         color: var(--darker-grey);
+        text-decoration: none;
     }
 
     .sub-data {
@@ -77,6 +79,12 @@
     .data {
         font-weight: var(--light);
         color: var(--darker-grey)
+    }
+
+    .name {
+        text-decoration: underline;
+        cursor: pointer;
+        color:#007864;
     }
 
     #icon {
