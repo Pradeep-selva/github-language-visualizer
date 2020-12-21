@@ -18,5 +18,6 @@
         background-color: var(--black);
         font-size: var(--small);
         font-weight: var(--light);
+		color: var(--smokey-white);
     }
 </style>

@@ -1,10 +1,17 @@
 <script lang="ts">
-    import { getUserRepos } from "../configs";
+    import { getUserRepoLanguages, getUserRepos } from "../configs";
 
     let user: string = ""
 
     const handleSubmit = (event) => {
-        event.key === "Enter" && getUserRepos(user).then(console.log)
+        event.key === "Enter" && getUserRepos(user).then(repos => {
+            console.log(repos)
+            repos.map(item => getUserRepoLanguages(user, item.name).then(languages => {
+                for(let k in languages as Object){
+                    console.log(k)
+                }
+            }))
+        })
     }
 </script>
 
