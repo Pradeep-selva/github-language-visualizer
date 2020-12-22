@@ -66,8 +66,11 @@
   ></script>
   <script defer type="module">
     import { firebaseConfig } from "./firebaseConfig.js";
+    const PRODUCTION = false;
 
-    firebase.initializeApp(firebaseConfig);
-    firebase.analytics();
+    if (PRODUCTION) {
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+    }
   </script>
 </html>

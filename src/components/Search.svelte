@@ -26,7 +26,7 @@
     }
 
     input {
-        min-width: 100vh;
+        min-width: 70vw;
         border-radius: var(--largest);
         background-color: var(--grey);
         padding: 1rem;
@@ -44,5 +44,17 @@
     ::placeholder {
         font-size: var(--big);
         text-align: center;
+    }
+
+    @media screen and (max-width: 650px){
+        input {
+            padding:0.5rem;
+            max-width: 4vw; 
+            font-size: var(--medium);           
+        }
+
+        ::placeholder {
+            font-size: var(--small);
+        }
     }
 </style>

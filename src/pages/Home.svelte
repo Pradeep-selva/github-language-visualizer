@@ -28,4 +28,10 @@
 	#title {
 		flex: 1
 	}
+
+	@media screen and (max-width: 650px){
+		main {
+			font-size: var(--medium);
+		}
+	}
 </style>
