@@ -61,7 +61,7 @@
 
 <main lang="ts">
     {#if loading || Object.keys(userData).length > 0}
-        <h1 transition:fade={{duration:700}}>
+        <h1 transition:fade={{duration:700}} style="text-align:center">
             {loading?"We are fetching your data":`Result for ${params?.userName}`}
         </h1>
     {/if}
@@ -72,7 +72,7 @@
     {/if}
 
     {#if loading}
-        <h4>This may take some time. Please be patient...</h4>
+        <h4 style="text-align:center">This may take some time. Please be patient...</h4>
         <Loading/>
     {:else}
         {#if Object.keys(userData).length > 0}
