@@ -41,7 +41,7 @@
     }
   const chartConfigs = {
     type: 'stackedcolumn3d',
-    width: "60%",
+    width: window.screen.width <= 650?"95%":"60%",
     height: "50%",
     dataFormat: 'json',
     dataSource

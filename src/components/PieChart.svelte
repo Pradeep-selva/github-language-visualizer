@@ -21,8 +21,8 @@
 
     const chartConfigs = {
         type: 'pie3d',
-        width: '60%',
-        height:"30%",
+        width: window.screen.width <= 650?"95%":'60%',
+        height:window.screen.width <= 650?"50%":"50%",
         dataFormat: 'json',
         dataSource
     }

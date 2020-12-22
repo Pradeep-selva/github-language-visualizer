@@ -130,4 +130,10 @@
         padding: 1rem;
         border-radius: var(--small);
     }
+
+    @media screen and (max-width: 650px){
+        h1{
+            font-size: var(--medium)
+        }
+    }
 </style>
