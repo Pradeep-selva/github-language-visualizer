@@ -11,12 +11,17 @@
     <meta property="og:site_name" content="Github Language Visualizer" />
     <meta
       property="og:image:secure_url"
-      content="https://d29fhpw069ctt2.cloudfront.net/icon/image/74158/preview.svg"
+      content="https://library.kissclipart.com/20180901/hoq/kissclipart-bar-chart-icon-transparent-clipart-bar-chart-compu-4556a490abca247e.png"
     />
     <meta
       property="og:description"
       content="A website to see the statistics of languages used in your github repositories. Just enter and search for your github username!"
     />
+    <meta
+      property="og:url"
+      content="https://github-language-visualizer.web.app/"
+    />
+    <meta property="og:title" content="Github Language Visualizer" />
     <meta
       name="keywords"
       content="github, language, visualization, repository, statistics, svelte"
@@ -24,14 +29,26 @@
 
     <title>Github Language Visualizer</title>
 
-    <link rel="icon" type="image/png" href="/favicon.png" />
-    <link rel="stylesheet" href="/global.css" />
-    <link rel="stylesheet" href="/build/bundle.css" />
+    <link rel="icon" type="image/png" href="/favicon.png" pre />
+    <link
+      rel="preload"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+      href="/global.css"
+    />
+    <link
+      rel="preload"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+      href="/build/bundle.css"
+    />
 
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
       href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;800&display=swap"
-      rel="stylesheet"
+      rel="preload"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
     />
 
     <script defer src="/build/bundle.js"></script>
