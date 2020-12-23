@@ -28,6 +28,19 @@ export const getTopLanguages = (obj: StringNumberObj) => {
     .reduce((r, [k, v]) => ({ ...r, [k]: v }), {});
 };
 
+export const combineLanguageObjs = (a: StringNumberObj, b: StringNumberObj) => {
+  const result = { ...a };
+  for (var key in b) {
+    if (Object.keys(result).includes(key)) {
+      result[key] += b[key];
+    } else {
+      result[key] = b[key];
+    }
+  }
+
+  return result;
+};
+
 export const getStackedChartData = (
   own: StringNumberObj,
   forked: StringNumberObj

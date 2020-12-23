@@ -5,7 +5,7 @@
     import PieChart from '../components/PieChart.svelte';
     import TopLanguageCard from '../components/TopLanguageCard.svelte';
     import { getUserData, getUserRepoLanguages, getUserRepos } from '../configs';
-    import { formatChartData, getTopLanguages } from '../services';
+    import { combineLanguageObjs, formatChartData, getTopLanguages } from '../services';
     import {pop} from 'svelte-spa-router'
     import { backIcon, emptyIcon } from '../assetPaths';
 	import {fade} from 'svelte/transition'
@@ -26,6 +26,8 @@
     let error = false;
     let loading = false;
 
+
+
     const toggleLoading = () => loading = !loading;
     
     const fetchAll = async () => {
@@ -34,6 +36,7 @@
         
         try {
             const repos = await getUserRepos(userName);
+            console.log(repos)
 
             repos.map(async repo => {
                 const languages = await getUserRepoLanguages(userName, repo.name);
@@ -81,10 +84,9 @@
 
         {#if Object.keys(ownLanguageStats).length > 0}
             <TopLanguageCard 
-                languages={getTopLanguages({
-                    ...ownLanguageStats, 
-                    ...forkedLanguageStats
-                })} 
+                languages={getTopLanguages(
+                    combineLanguageObjs(ownLanguageStats, forkedLanguageStats)
+                    )} 
                 userName={params?.userName}
             />
             <BarChart 
