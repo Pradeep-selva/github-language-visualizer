@@ -3,6 +3,7 @@
 - A website to see the statistics of languages used in your github repositories. Just enter and search for your github username!
 - Enter your github username and view your basic github profile info and a detailed graphical report of your language usage overall through your repositories.
 - View a top 3 language report, a stacked chart showing ratio between language used in forked and owned repositories and a pie chart showing language usage distribution in owned repositories.
+- Install it on your mobile device as a PWA.
 - [Visit site](https://github-language-visualizer.web.app) to see it in action.
 
 ## Build using
