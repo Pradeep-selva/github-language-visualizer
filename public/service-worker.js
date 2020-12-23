@@ -6,9 +6,7 @@ var filesToCache = [
   "/build/bundle.css",
   "/build/bundle.js",
   "/build/bundle.js.map",
-  "https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;800&display=swap",
-  "https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js",
-  "https://www.gstatic.com/firebasejs/8.2.1/firebase-analytics.js"
+  "https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;800&display=swap"
 ];
 self.addEventListener("install", function (e) {
   e.waitUntil(
