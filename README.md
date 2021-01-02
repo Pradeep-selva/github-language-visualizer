@@ -6,7 +6,7 @@
 - Install it on your mobile device as a PWA.
 - [Visit site](https://github-language-visualizer.web.app) to see it in action.
 
-## Build using
+## Built using
 
 - Svelte
 - Typescript
